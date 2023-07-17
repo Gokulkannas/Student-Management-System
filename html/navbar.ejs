@@ -1,0 +1,82 @@
+
+
+<nav class="fixed-top">
+    <a href="/">Home</a>
+      <a href="/student">Student</a>
+      <a href="/view">View</a>
+      <div class="animation start-home"></div>
+  </nav>
+
+
+<style>
+    nav {
+	margin: 30px auto ;
+
+	position: relative;
+	width: 590px;
+	height: auto;
+	background-color: #34495e;
+	border-radius: 8px;
+	font-size: 0;
+	color: white;
+}
+nav a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 15px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	color: rgb(221, 221, 221);
+	cursor: pointer;
+}
+nav .animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 8px;
+}
+a:nth-child(1) {
+	width: 100px;
+	color: #f2f2f2;
+}
+a:nth-child(2) {
+	width: 110px;
+	color: #f2f2f2;
+}
+a:nth-child(3) {
+	width: 100px;
+	color: #f2f2f2;
+}
+
+nav .start-home, a:nth-child(1):hover~.animation {
+	width: 100px;
+	left: 0;
+	background-color: #1abc9c;
+	
+}
+nav .start-about, a:nth-child(2):hover~.animation {
+	width: 110px;
+	left: 100px;
+	background-color: #e74c3c;
+}
+nav .start-blog, a:nth-child(3):hover~.animation {
+	width: 100px;
+	left: 210px;
+	background-color: #149cb4;
+}
+
+
+body {
+	font-size: 12px;
+	font-family: sans-serif;
+}
+
+
+
+</style>
