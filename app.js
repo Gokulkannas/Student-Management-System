@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/public'));
 app.set("view engine","ejs");
 app.set("views","./html")
 
-mongoose.connect("mongodb+srv://gokulkannas20msc:vscode1234@cluster0.z9hspc4.mongodb.net/Student")
+mongoose.connect("mongodb://localhost:27017/Student")
 .then(()=>{
     console.log("db is connected");
 })
@@ -92,7 +92,7 @@ const postStudent = (req,res)=>{
     }
     Student.create(data)
     .then((data)=>{
-        return res.redirect("/student")
+        return res.redirect("/view")
     })
     .catch((err)=>{
         console.log(err);
@@ -147,7 +147,9 @@ const deleteStudent = (req,res)=>{
     const id = req.params.id
     Student.deleteOne({_id:id})
     .then((data)=>{
-        return res.redirect("/view")
+        return  res.send(
+            `<script>alert('Are you sure you want to delete?'); window.location.href="/view";</script>`
+          );
     })
     .catch((err)=>{
         console.log(err);
