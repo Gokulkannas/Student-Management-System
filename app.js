@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 const bodyParser = require("body-parser");
 // const multer =require("multer");
 
-
+  
 const app=express()
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
